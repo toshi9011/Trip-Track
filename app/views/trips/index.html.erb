@@ -1,0 +1,62 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        投稿一覧
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @trips.each do |trip| %>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to trip_path(trip) do %>
+                  <% if trip.image.attached? %>
+                    <%= image_tag trip.image %>
+                  <% end %>
+                <% end %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <%= link_to user_path(trip.user.id) do %>
+                      <%= image_tag trip.user.image, fallback: "no-image.png" %>
+                    <% end %>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="title"><%= link_to trip.user.username, user_path(trip.user.id) %></div>
+                </div>
+              </div>
+
+              <div class="content">
+                <time><%= trip.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              </div>
+              <div>
+                <% if current_user.already_favorited?(trip) %>
+                  <%= link_to trip_favorites_path(trip), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                  <%= trip.favorites.count %>
+                <% else %>
+                  <%= link_to trip_favorites_path(trip), method: :post do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                  <%= trip.favorites.count %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
