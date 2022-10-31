@@ -2,6 +2,10 @@
   "name": "sample",
   "private": true,
   "start": "react-scripts --openssl-legacy-provider start",
+  "engines": {
+    "node": "16.x",
+    "yarn": "1.x"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
