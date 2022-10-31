@@ -19,6 +19,8 @@
                 <%= link_to trip_path(trip) do %>
                   <% if trip.image.attached? %>
                     <%= image_tag trip.image %>
+                  <% else %>
+                    <%= image_tag("no-image.png") %>
                   <% end %>
                 <% end %>
               </figure>
