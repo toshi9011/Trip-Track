@@ -30,7 +30,9 @@
                 <div class="media-left">
                   <figure class="image is-48x48">
                     <%= link_to user_path(trip.user.id) do %>
-                      <%= image_tag trip.user.image, fallback: "no-image.png" %>
+                      <% if trip.user.image.attached? %>
+                        <%= image_tag trip.user.image, fallback: "no-image.png" %>
+                      <% end %>
                     <% end %>
                   </figure>
                 </div>
