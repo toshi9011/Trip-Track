@@ -19,7 +19,7 @@
                 <figure class="image">
                   <%= link_to user_path(user) do %>
                     <% if user.image.attached? %>
-                      <%= image_tag user.image, fallback: "no-image.png", class: "image is-rounded" %>
+                      <%= image_tag user.image, class: "image is-rounded" %>
                     <% else %>
                       <%= image_tag("no-image.png") %>
                     <% end %>

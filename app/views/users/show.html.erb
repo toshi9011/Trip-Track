@@ -16,7 +16,9 @@
           <div class="column is-4">
             <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
             <% if @user.image.attached? %>
-              <%= image_tag @user.image, fallback: "no-image.png", class: "image is-rounded" %>
+              <%= image_tag @user.image, class: "image is-rounded" %>
+            <% else %>
+            <%= image_tag("no-image.png") %>
             <% end %>
             </figure>
           </div>

@@ -17,6 +17,8 @@
             <figure class="image is-4by3">
             <% if @trip.image.attached? %>
               <%= image_tag @trip.image %>
+            <% else %>
+            <%= image_tag("no-image.png") %>
             <% end %>
             </figure>
           </div>
