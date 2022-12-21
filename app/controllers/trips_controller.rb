@@ -48,7 +48,7 @@ class TripsController < ApplicationController
   def destroy
     trip = Trip.find_by(id: params[:id])
     trip.destroy
-    redirect_to trips_path, notice: "削除しました。"
+    redirect_to trips_path, notice: "投稿を削除しました。"
   end
 
   def favorited?(user)

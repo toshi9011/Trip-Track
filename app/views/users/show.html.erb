@@ -36,6 +36,13 @@
                     <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
                 </td>
                 <% end %>
+                <% if user_signed_in? && @user == current_user %>
+                  <td>
+                    <div class="is-size-4">
+                        <%= link_to "退会",user_path(current_user.id), class: "destroy-user button is-danger", method: :delete, data: {confirm: "本当に退会しますか？"} %>
+                    </div>
+                  </td>
+                <% end %>
               </tr>
             </table>
             <table class="table is-fullwidth">
