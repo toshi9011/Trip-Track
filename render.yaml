@@ -1,0 +1,21 @@
+databases:
+  - name: Triptrack_db
+    databaseName: triptrack
+    user: Triptrack
+    region: singapore
+
+services:
+  - type: web
+    name: Triptrack
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Triptrack_db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
