@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: Triptrack_db
+    name: Triptrack
     env: ruby
     region: singapore
     plan: free
