@@ -155,6 +155,7 @@ GEM
     msgpack (1.6.0)
     mustermann (1.1.2)
       ruby2_keywords (~> 0.0.1)
+    mysql2 (0.5.4)
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.9)
@@ -308,6 +309,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.2)
   mini_magick
+  mysql2
   pg (= 1.1.4)
   puma (~> 4.1)
   rails (~> 6.0.6)
