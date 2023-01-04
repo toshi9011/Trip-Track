@@ -6,7 +6,7 @@ ruby '2.7.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.6'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '1.4.2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -68,9 +68,7 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 
 group :production do
-  gem 'pg', '~> 1.4'
+  gem 'pg', '1.1.4'
 end
 
 gem "aws-sdk-s3", require: false
-
-gem 'mysql2'
