@@ -25,39 +25,47 @@
       </div>
     <% end %>
 
-    <nav class="navbar is-warning">
+    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-4" style="font-family: serif;">Trip Track</h1>
         <% end %>
-      </div>
+        </div>
+      </nav>
 
       <% if user_signed_in? %>
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <div class="navbar-item">
-            <%= link_to "投稿一覧", trips_path, class: "button is-warning is-light" %>
-          </div>
-          <div class="navbar-item">
-            <%= link_to "新規投稿", new_trip_path, class: "button is-warning is-light" %>
-          </div>
-            <div class="navbar-end">
+          
+            <div role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menu">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </div>
+
+          <div id="menu" class="navbar-menu">
+            <div class="navbar-start">
               <div class="navbar-item">
-                <div class="field is-grouped">
-                  <p class="control">
-                    <%= link_to "ユーザー一覧", users_path, class: "button is-warning is-light" %>
-                  </p>
-                  <p class="control">
-                    <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
-                  </p>
-                  <p class="control">
-                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
-                  </p>
-                </div>
+                <%= link_to "投稿一覧", trips_path %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "新規投稿", new_trip_path %>
+              </div>
+                
+              <div class="navbar-item">
+                <%= link_to "ユーザー一覧", users_path %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "マイページ", user_path(current_user) %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </div>
+
+              <div class="navbar-end">
               </div>
             </div>
-        </div>
+          </div>
       <% else %>
-        <div id="navbarExampleTransparentExample" class="navbar-menu is-flex-touch">
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-end">
               <div class="navbar-item">
                 <div class="field is-grouped">
@@ -72,8 +80,38 @@
             </div>
         </div>
       <% end %>
-    </nav>
 
     <%= yield %>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+ 
+  // ナビゲーションバーガー（navbar-burgerクラスを持つすべての要素）を取得します。
+  const $navbarBurgers = document.querySelectorAll('.navbar-burger');
+ 
+  // ナビゲーションバーガーがあるかどうかを確認します。
+  if ($navbarBurgers.length > 0) {
+ 
+    // すべてのナビゲーションバーガーをループします。
+    $navbarBurgers.forEach( el => {
+ 
+      // ナビゲーションバーガーにクリックイベントを追加します。
+      el.addEventListener('click', () => {
+ 
+        // ナビゲーションバーガーのdata-target属性の値を取得します。
+        const target = el.dataset.target;
+        // メニュー（data-target属性の値をIDとして持つ要素）を取得します。
+        const $target = document.getElementById(target);
+ 
+        // ナビゲーションバーガーでis-activeクラスを切り替えます。
+        el.classList.toggle('is-active');
+        // メニューでis-activeクラスを切り替えます。
+        $target.classList.toggle('is-active');
+ 
+      });
+    });
+  }
+});
+</script>
   </body>
 </html>
