@@ -68,7 +68,7 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 
 group :production do
-  gem 'mysql2', '1.1.4'
+  gem 'mysql2'
 end
 
 gem "aws-sdk-s3", require: false
