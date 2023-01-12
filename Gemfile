@@ -5,8 +5,8 @@ ruby '2.7.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.6'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3', '1.4.2'
+# Use mysql2 as the database for Active Record
+# gem 'mysql2', '1.4.2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
+  gem 'mysql2'
 end
 
 group :development do
@@ -68,7 +68,7 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 
 group :production do
-  gem 'pg', '1.1.4'
+  gem 'mysql2', '1.1.4'
 end
 
 gem "aws-sdk-s3", require: false
