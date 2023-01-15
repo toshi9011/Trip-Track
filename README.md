@@ -1,24 +1,12 @@
-# README
+・ruby / ruby on railsを使用した理由。
+SNS風のアプリ開発に向いている言語が何かというところから調べました。そこで主にPHPやRubyが良いのではという見解に至ったのですが、その中でも自分が学習に使用しているprogateで充実した学習内容があったことで学習効率の良さも考えて選択しました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+・なぜこのスクリプトを作ろうと思ったのか、きっかけを教えてください。
+まず1番の目的として、海外に興味を向けているがなかなか行動できない人たちに、直接魅力を知ってもらいたいという気持ちから作り始めました。
+海外経験の中で見てきた様々な魅力を見ていただき、その中で少しでも海外へ興味のある方々の、海外進出の後押しになれたらという気持ちが大きいです。
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+・このサイトでは、どのようなことが出来るのか教えてください
+会員登録、ログインすることで、現在登録している方の情報やその方の掲載している写真等を見ることができます。また海外経験があり同じように海外の写真を掲載しているという方は投稿することもでき、写真を共有できます。いいね機能もつけておりますので、一目で人気のある投稿を確認することもできます。
+(まだ付けていない→あとは検索機能で自分の興味のある国や場所を検索することですぐにその情報が見れるようにもなっております。)
